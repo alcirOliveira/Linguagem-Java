@@ -1,0 +1,399 @@
+
+package Calculadora;
+
+import mercado.Principal;
+
+public class Tabela extends javax.swing.JFrame {
+
+    
+    public Tabela() {
+        initComponents();
+    }
+    
+    String operador;
+    String guardavalor;
+    Integer n1, n2, resultado;
+    double num1, num2, resultadoReal;
+    
+    public void recebevalor(String numero){
+        guardavalor = jTvisor.getText();
+        guardavalor = guardavalor + numero;
+        jTvisor.setText(guardavalor); 
+    }
+    
+    public void operacao(String tipo){
+        operador = jTvisor.getText();
+        operador = tipo;
+        n1 = Integer.parseInt(jTvisor.getText());
+        num1 = Double.parseDouble(jTvisor.getText());
+        jTvisor.setText(""); 
+    }
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jTvisor = new javax.swing.JTextField();
+        jB1 = new javax.swing.JButton();
+        jB2 = new javax.swing.JButton();
+        jB3 = new javax.swing.JButton();
+        jBdividi = new javax.swing.JButton();
+        jB4 = new javax.swing.JButton();
+        jB5 = new javax.swing.JButton();
+        jB6 = new javax.swing.JButton();
+        jB8 = new javax.swing.JButton();
+        jBmultiplica = new javax.swing.JButton();
+        jB9 = new javax.swing.JButton();
+        jBponto = new javax.swing.JButton();
+        jBsoma = new javax.swing.JButton();
+        jBsubtrai = new javax.swing.JButton();
+        jBlimpar = new javax.swing.JButton();
+        jB7 = new javax.swing.JButton();
+        jB0 = new javax.swing.JButton();
+        jBresultado = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jB1.setText("1");
+        jB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB1ActionPerformed(evt);
+            }
+        });
+
+        jB2.setText("2");
+        jB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB2ActionPerformed(evt);
+            }
+        });
+
+        jB3.setText("3");
+        jB3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB3ActionPerformed(evt);
+            }
+        });
+
+        jBdividi.setText("/");
+        jBdividi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBdividiActionPerformed(evt);
+            }
+        });
+
+        jB4.setText("4");
+        jB4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB4ActionPerformed(evt);
+            }
+        });
+
+        jB5.setText("5");
+        jB5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB5ActionPerformed(evt);
+            }
+        });
+
+        jB6.setText("6");
+        jB6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB6ActionPerformed(evt);
+            }
+        });
+
+        jB8.setText("8");
+        jB8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB8ActionPerformed(evt);
+            }
+        });
+
+        jBmultiplica.setText("*");
+        jBmultiplica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBmultiplicaActionPerformed(evt);
+            }
+        });
+
+        jB9.setText("9");
+        jB9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB9ActionPerformed(evt);
+            }
+        });
+
+        jBponto.setText(".");
+        jBponto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBpontoActionPerformed(evt);
+            }
+        });
+
+        jBsoma.setText("+");
+        jBsoma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsomaActionPerformed(evt);
+            }
+        });
+
+        jBsubtrai.setText("_");
+        jBsubtrai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsubtraiActionPerformed(evt);
+            }
+        });
+
+        jBlimpar.setText("C");
+        jBlimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBlimparActionPerformed(evt);
+            }
+        });
+
+        jB7.setText("7");
+        jB7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB7ActionPerformed(evt);
+            }
+        });
+
+        jB0.setText("0");
+        jB0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB0ActionPerformed(evt);
+            }
+        });
+
+        jBresultado.setText("=");
+        jBresultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBresultadoActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jB1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jB2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jB3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jBponto, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBsoma, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBsubtrai, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jB4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jB5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jB7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jB8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jB9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jB6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBdividi, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBmultiplica, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jB0, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                            .addComponent(jBlimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBresultado, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTvisor))
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jTvisor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBdividi, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jB4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBmultiplica, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBsubtrai, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBsoma, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB0, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBponto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBresultado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void jB0ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("0");
+    }                                   
+
+    private void jBpontoActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        recebevalor(".");
+    }                                       
+
+    private void jB1ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("1");
+    }                                   
+
+    private void jB2ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("2");
+    }                                   
+
+    private void jB3ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("3");
+    }                                   
+
+    private void jB4ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("4");
+    }                                   
+
+    private void jB5ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("5");
+    }                                   
+
+    private void jB6ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("6");
+    }                                   
+
+    private void jB7ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("7");
+    }                                   
+
+    private void jB8ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("8");
+    }                                   
+
+    private void jB9ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        recebevalor("9");
+    }                                   
+
+    private void jBsomaActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        operacao("+");
+    }                                      
+
+    private void jBresultadoActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        n2 = Integer.parseInt(jTvisor.getText());
+        num2 = Double.parseDouble(jTvisor.getText());
+        
+        if (operador == "+"){
+            resultado = n1+n2; 
+        }
+        else if (operador == "-"){
+            resultado = n1-n2; 
+        }
+        else if (operador == "*"){
+            resultado = n1*n2; 
+        }
+        else if (operador == "/"){
+            resultadoReal = num1/num2; 
+        }
+        if (operador != "/"){
+            jTvisor.setText(String.valueOf(resultado));
+        }else{
+            jTvisor.setText(String.valueOf(resultadoReal));
+        }
+        
+    }                                           
+
+    private void jBsubtraiActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        operacao("-");
+    }                                         
+
+    private void jBmultiplicaActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        operacao("*");
+    }                                            
+
+    private void jBdividiActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        operacao("/");
+    }                                        
+
+    private void jBlimparActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        jTvisor.setText("");
+    }                                        
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Principal pr = new Principal();
+        pr.show();
+        setVisible(false);
+    }                                        
+
+    public static void main(String args[]) {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Tabela().setVisible(true);
+            }
+        });
+    }
+    
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jB0;
+    private javax.swing.JButton jB1;
+    private javax.swing.JButton jB2;
+    private javax.swing.JButton jB3;
+    private javax.swing.JButton jB4;
+    private javax.swing.JButton jB5;
+    private javax.swing.JButton jB6;
+    private javax.swing.JButton jB7;
+    private javax.swing.JButton jB8;
+    private javax.swing.JButton jB9;
+    private javax.swing.JButton jBdividi;
+    private javax.swing.JButton jBlimpar;
+    private javax.swing.JButton jBmultiplica;
+    private javax.swing.JButton jBponto;
+    private javax.swing.JButton jBresultado;
+    private javax.swing.JButton jBsoma;
+    private javax.swing.JButton jBsubtrai;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField jTvisor;
+    // End of variables declaration                   
+}

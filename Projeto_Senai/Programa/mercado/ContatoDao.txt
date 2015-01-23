@@ -1,0 +1,73 @@
+
+package Dao;
+
+import Logica.Contato;
+import bancodedados.CriaConexao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ContatoDao {
+    
+    private Connection conexao;
+    
+    public ContatoDao() throws SQLException{
+        this.conexao = CriaConexao.getconexao();
+    }
+    
+    public void Adiciona (Contato c1) throws SQLException{
+        String Sql = "insert into contato(nome, marca, data) values (?,?,?);";
+
+        PreparedStatement stmt = conexao.prepareStatement(Sql);
+        stmt.setString(1, c1.getNome());
+        stmt.setString(2, c1.getMarca());
+        stmt.setString(3, c1.getData());
+
+        stmt.execute();
+        stmt.close();        
+    }
+
+    public List<Contato>getLista(String nome) throws SQLException{
+        String Sql = "select * from contato where nome like ?";
+        PreparedStatement stmt = conexao.prepareStatement(Sql);
+        stmt.setString(1, nome);
+        ResultSet rs = stmt.executeQuery();
+
+        List<Contato> minhalista = new ArrayList <Contato> ();
+        while (rs.next()){
+            Contato c1 = new Contato();
+            c1.setCodigo(Long.valueOf(rs.getLong("codigo")));
+            c1.setNome(rs.getString("nome"));
+            c1.setMarca(rs.getString("marca"));
+            c1.setData(rs.getString("data"));
+            minhalista.add (c1);            
+        }
+
+        rs.close();
+        stmt.close();   
+        return minhalista;
+    }
+
+    public void altera (Contato c1) throws SQLException {
+        String Sql = "update Contato set nome=?, marca=?, data=? where codigo=?"; 
+        PreparedStatement stmt = conexao.prepareStatement(Sql);
+        stmt.setString(1, c1.getNome());
+        stmt.setString(2, c1.getMarca());
+        stmt.setString(3, c1.getData());
+        stmt.setLong (4, c1.getCodigo());
+
+        stmt.execute();
+        stmt.close();
+    }
+
+     public void remove(Contato c1) throws SQLException{
+        String Sql = "delete from contato where codigo = ?";
+        PreparedStatement stmt = conexao.prepareStatement(Sql);        
+        stmt.setLong(1, c1.getCodigo());        
+        stmt.execute();
+        stmt.close();
+    }
+}

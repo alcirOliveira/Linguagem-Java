@@ -1,0 +1,19 @@
+
+package mercado;
+
+import Logica.Contato;
+import bancodedados.CriaConexao;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class Mercado {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    public static void main(String[] args) throws SQLException {
+        Principal prin = new Principal();
+        prin.show();
+    }
+}

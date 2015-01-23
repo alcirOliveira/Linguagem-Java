@@ -1,0 +1,440 @@
+
+package mercado;
+
+import Dao.ContatoDao;
+import Logica.Contato;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author Aluno
+ */
+
+public class formulario extends javax.swing.JFrame {
+
+    DefaultTableModel TmContato = new DefaultTableModel(null, new String[]{"codigo", "nome", "marca", "data"});
+        List<Contato>contatos;
+        ListSelectionModel IsContato;
+    
+    public formulario() {
+        initComponents();
+        desabilitadados();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jBpesquisar = new javax.swing.JButton();
+        jTpesquisar = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTcod = new javax.swing.JTextField();
+        jTnome = new javax.swing.JTextField();
+        jTmarca = new javax.swing.JTextField();
+        jTdata = new javax.swing.JTextField();
+        jBnovo = new javax.swing.JButton();
+        jBaltera = new javax.swing.JButton();
+        jBexcluir = new javax.swing.JButton();
+        jBsair = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabela = new javax.swing.JTable();
+        Pesquisar = new javax.swing.JButton();
+        cmdsalvar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mercado de Tecnologia"));
+
+        jBpesquisar.setText("Pesquisar");
+        jBpesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBpesquisarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Código:");
+
+        jLabel2.setText("Nome:");
+
+        jLabel3.setText("Data de Fabricação:");
+
+        jLabel4.setText("Marca:");
+
+        jBnovo.setText("Novo");
+        jBnovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnovoActionPerformed(evt);
+            }
+        });
+
+        jBaltera.setText("Aterar");
+        jBaltera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBalteraActionPerformed(evt);
+            }
+        });
+
+        jBexcluir.setText("Excluir");
+        jBexcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBexcluirActionPerformed(evt);
+            }
+        });
+
+        jBsair.setText("Sair");
+        jBsair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsairActionPerformed(evt);
+            }
+        });
+
+        Tabela.setModel(TmContato);
+        Tabela.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        IsContato = Tabela.getSelectionModel();
+        IsContato.addListSelectionListener(new ListSelectionListener(){
+            public void valueChanged(ListSelectionEvent e){
+                if (! e.getValueIsAdjusting()){
+                    selecionalinha(Tabela);
+                }
+
+            }
+        });
+        jScrollPane1.setViewportView(Tabela);
+
+        Pesquisar.setText("Pesquisar");
+        Pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PesquisarActionPerformed(evt);
+            }
+        });
+
+        cmdsalvar.setText("Salvar");
+        cmdsalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdsalvarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jBnovo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBaltera, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addComponent(jBexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmdsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBsair, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTpesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Pesquisar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBpesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTnome, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                            .addComponent(jTdata, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTmarca, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTcod))))
+                .addGap(19, 19, 19))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBpesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTpesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Pesquisar))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel4)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jTmarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(jTdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBnovo)
+                    .addComponent(jBaltera)
+                    .addComponent(jBexcluir)
+                    .addComponent(jBsair)
+                    .addComponent(cmdsalvar))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void jBnovoActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        habilitadados();        
+        jTnome.setText("");
+        jTmarca.setText("");
+        jTdata.setText("");
+    }                                      
+
+    private void jBpesquisarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+
+    }                                           
+
+    private void jBexcluirActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        try{
+            excluirContato();
+            ListarContato();
+        }catch (SQLException ex){
+                    JOptionPane.showMessageDialog(null, "Problema na exclusão" + ex);
+        }
+    }                                         
+
+    private void jBalteraActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        try {
+            alterarContatos();
+            ListarContato();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Problemas na Alteração " + ex);
+        }
+    }                                        
+
+    private void jBsairActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        Principal pr =new Principal();
+        pr.show();
+        setVisible(false);
+    }                                      
+
+    private void PesquisarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        try {
+            ListarContato();
+        } catch (SQLException ex) {
+            Logger.getLogger(formulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }                                         
+
+    private void cmdsalvarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        verificadados();
+        cadastro();
+        desabilitadados();
+    }                                         
+
+    public void excluirContato() throws SQLException{
+        int resp =JOptionPane.showConfirmDialog(this, "Deseja excluir o contato?",
+                "Comfirmação", JOptionPane.YES_NO_OPTION);
+        if (resp==JOptionPane.YES_NO_OPTION){
+            ContatoDao Dao = new ContatoDao();
+            Dao.remove(contatos.get(Tabela.getSelectedRow()));        
+        }
+    }
+    
+    public void ListarContato() throws SQLException{
+        ContatoDao Dao = new ContatoDao();
+        contatos = Dao.getLista("%"+jTpesquisar.getText()+"%");
+        MostraPesquisa(contatos);
+    }
+    
+    public void cadastro(){
+        try {
+            Contato dados = new Contato();
+            dados.setNome(jTnome.getText());
+            dados.setMarca(jTmarca.getText());
+            dados.setData(jTdata.getText());
+            
+            ContatoDao Dao =new ContatoDao();
+            Dao.Adiciona(dados);
+            JOptionPane.showMessageDialog(null, "Dados salvo com sucesso!!!");
+        } catch (SQLException ex) {
+            Logger.getLogger(formulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public void desabilitadados(){
+            jTcod.setEditable(false);
+            jTnome.setEditable(false);
+            jTmarca.setEditable(false);
+            jTdata.setEditable(false);
+        }
+        
+        public void habilitadados(){
+            //jTcod.setEditable(true);
+            jTnome.setEditable(true);
+            jTmarca.setEditable(true);
+            jTdata.setEditable(true);
+        }
+    
+    public boolean verificadados(){
+        if (!jTnome.getText().equals("") && !jTdata.getText().equals("")) {
+            return true;
+        }else{
+            JOptionPane.showMessageDialog(null, "Campos Nome ou Data nao Preenchidos! ");
+        }
+            return false;
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new formulario().setVisible(true);
+            }
+        });
+    }
+    
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton Pesquisar;
+    private javax.swing.JTable Tabela;
+    private javax.swing.JButton cmdsalvar;
+    private javax.swing.JButton jBaltera;
+    private javax.swing.JButton jBexcluir;
+    private javax.swing.JButton jBnovo;
+    private javax.swing.JButton jBpesquisar;
+    private javax.swing.JButton jBsair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTcod;
+    private javax.swing.JTextField jTdata;
+    private javax.swing.JTextField jTmarca;
+    private javax.swing.JTextField jTnome;
+    private javax.swing.JTextField jTpesquisar;
+    // End of variables declaration                   
+
+    private void MostraPesquisa(List<Contato> contatos) {
+        while (TmContato.getRowCount()>0){
+            TmContato.removeRow(0);
+        }
+    
+        if(contatos.size()==0){
+            JOptionPane.showMessageDialog(null, "Nenhum contato cadastrado!!!");
+        }else{
+            String[] linha = new String[] {null,null,null};
+        
+            for (int i=0; i < contatos.size(); i++ ){
+                TmContato.addRow(linha);
+                TmContato.setValueAt(contatos.get(i).getCodigo(), i, 0);
+                TmContato.setValueAt(contatos.get(i).getNome(),i,1);
+                TmContato.setValueAt(contatos.get(i).getMarca(),i,2);
+                TmContato.setValueAt(contatos.get(i).getData(),i,3);
+            }
+        }
+    }
+    
+    private void selecionalinha(JTable Tabela1) {
+        if(Tabela.getSelectedRow()!= -1){
+            habilitadados();
+            habilitadados();
+            jTcod.setText(String.valueOf(contatos.get(Tabela1.getSelectedRow()).getCodigo()));
+            jTnome.setText(contatos.get(Tabela1.getSelectedRow()).getNome());
+            jTmarca.setText(contatos.get(Tabela1.getSelectedRow()).getMarca());
+            jTdata.setText(contatos.get(Tabela1.getSelectedRow()).getData());
+       }else{
+            jTcod.setText("");
+            jTnome.setText("");
+            jTmarca.setText("");
+            jTdata.setText("");
+        }
+    }
+    
+    private void alterarContatos() throws SQLException {
+        if (Tabela.getSelectedRow()!= -1){
+            if (verificadados()){
+                Contato c1 = new Contato();
+                ContatoDao Dao = new ContatoDao();
+                c1.setCodigo(Long.valueOf(jTcod.getText()));
+                c1.setNome(jTnome.getText());
+                c1.setMarca(jTmarca.getText());
+                c1.setData(jTdata.getText());
+                Dao.altera(c1);
+                JOptionPane.showMessageDialog(null, "Dados Alterados com sucesso!!!");            
+            }
+        }
+    }  
+}

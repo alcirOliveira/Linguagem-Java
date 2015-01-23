@@ -1,0 +1,703 @@
+
+package JogodaForca;
+
+import JogodaForca.fase2;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import mercado.Principal;
+
+public class fase1 extends javax.swing.JFrame {
+   
+    public fase1() {
+        
+        initComponents();
+        jLboneco1.setVisible(true);
+        jLboneco2.setVisible(false);
+        jLboneco3.setVisible(false);
+        jLboneco4.setVisible(false);
+        jLboneco5.setVisible(false);
+        jLboneco6.setVisible(false);
+        jLmadeira.setVisible(true);
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">
+    private void initComponents() {
+
+        jLa = new javax.swing.JLabel();
+        jLe = new javax.swing.JLabel();
+        jLm = new javax.swing.JLabel();
+        jLr = new javax.swing.JLabel();
+        jLu = new javax.swing.JLabel();
+        jLj = new javax.swing.JLabel();
+        jBa = new javax.swing.JButton();
+        jBb = new javax.swing.JButton();
+        jBc = new javax.swing.JButton();
+        jBd = new javax.swing.JButton();
+        jBe = new javax.swing.JButton();
+        jBf = new javax.swing.JButton();
+        jBk = new javax.swing.JButton();
+        jBl = new javax.swing.JButton();
+        jBm = new javax.swing.JButton();
+        jBj = new javax.swing.JButton();
+        jBi = new javax.swing.JButton();
+        jBh = new javax.swing.JButton();
+        jBq = new javax.swing.JButton();
+        jBt = new javax.swing.JButton();
+        jBo = new javax.swing.JButton();
+        jBp = new javax.swing.JButton();
+        jBs = new javax.swing.JButton();
+        jBr = new javax.swing.JButton();
+        jBy = new javax.swing.JButton();
+        jBsair = new javax.swing.JButton();
+        jBv = new javax.swing.JButton();
+        jBx = new javax.swing.JButton();
+        jBz = new javax.swing.JButton();
+        jBw = new javax.swing.JButton();
+        jBg = new javax.swing.JButton();
+        jBu = new javax.swing.JButton();
+        jBn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLerro = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLboneco1 = new javax.swing.JLabel();
+        jLboneco2 = new javax.swing.JLabel();
+        jLboneco3 = new javax.swing.JLabel();
+        jLboneco4 = new javax.swing.JLabel();
+        jLboneco5 = new javax.swing.JLabel();
+        jLboneco6 = new javax.swing.JLabel();
+        jLmadeira = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 600));
+        getContentPane().setLayout(null);
+
+        jLa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLa.setText("__");
+        getContentPane().add(jLa);
+        jLa.setBounds(430, 30, 18, 17);
+
+        jLe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLe.setText("__");
+        getContentPane().add(jLe);
+        jLe.setBounds(360, 30, 18, 17);
+
+        jLm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLm.setText("__");
+        getContentPane().add(jLm);
+        jLm.setBounds(390, 30, 18, 17);
+
+        jLr.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLr.setText("__");
+        getContentPane().add(jLr);
+        jLr.setBounds(330, 30, 18, 17);
+
+        jLu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLu.setText("__");
+        getContentPane().add(jLu);
+        jLu.setBounds(300, 30, 18, 17);
+
+        jLj.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLj.setText("__");
+        getContentPane().add(jLj);
+        jLj.setBounds(260, 30, 18, 17);
+
+        jBa.setText("A");
+        jBa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBa);
+        jBa.setBounds(40, 310, 50, 35);
+
+        jBb.setText("B");
+        jBb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBb);
+        jBb.setBounds(100, 310, 50, 35);
+
+        jBc.setText("C");
+        jBc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBcActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBc);
+        jBc.setBounds(160, 310, 50, 35);
+
+        jBd.setText("D");
+        jBd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBd);
+        jBd.setBounds(220, 310, 50, 35);
+
+        jBe.setText("E");
+        jBe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBe);
+        jBe.setBounds(280, 310, 50, 35);
+
+        jBf.setText("F");
+        jBf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBf);
+        jBf.setBounds(340, 310, 50, 35);
+
+        jBk.setText("K");
+        jBk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBk);
+        jBk.setBounds(220, 360, 50, 35);
+
+        jBl.setText("L");
+        jBl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBlActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBl);
+        jBl.setBounds(280, 360, 50, 35);
+
+        jBm.setText("M");
+        jBm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBmActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBm);
+        jBm.setBounds(340, 360, 50, 35);
+
+        jBj.setText("J");
+        jBj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBjActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBj);
+        jBj.setBounds(160, 360, 50, 35);
+
+        jBi.setText("I");
+        jBi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBiActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBi);
+        jBi.setBounds(100, 360, 50, 35);
+
+        jBh.setText("H");
+        jBh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBhActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBh);
+        jBh.setBounds(40, 360, 50, 35);
+
+        jBq.setText("Q");
+        jBq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBqActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBq);
+        jBq.setBounds(160, 410, 50, 35);
+
+        jBt.setText("T");
+        jBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBt);
+        jBt.setBounds(340, 410, 50, 35);
+
+        jBo.setText("O");
+        jBo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBo);
+        jBo.setBounds(40, 410, 50, 35);
+
+        jBp.setText("P");
+        jBp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBp);
+        jBp.setBounds(100, 410, 50, 35);
+
+        jBs.setText("S");
+        jBs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBs);
+        jBs.setBounds(280, 410, 50, 35);
+
+        jBr.setText("R");
+        jBr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBr);
+        jBr.setBounds(220, 410, 50, 35);
+
+        jBy.setText("Y");
+        jBy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jByActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBy);
+        jBy.setBounds(210, 460, 50, 35);
+
+        jBsair.setText("SAIR");
+        jBsair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBsair);
+        jBsair.setBounds(180, 510, 88, 35);
+
+        jBv.setText("V");
+        jBv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBvActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBv);
+        jBv.setBounds(90, 460, 50, 35);
+
+        jBx.setText("X");
+        jBx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBx);
+        jBx.setBounds(150, 460, 50, 35);
+
+        jBz.setText("Z");
+        jBz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBzActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBz);
+        jBz.setBounds(330, 460, 50, 35);
+
+        jBw.setText("W");
+        jBw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBwActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBw);
+        jBw.setBounds(270, 460, 50, 35);
+
+        jBg.setText("G");
+        jBg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBgActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBg);
+        jBg.setBounds(400, 310, 50, 35);
+
+        jBu.setText("U");
+        jBu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBu);
+        jBu.setBounds(400, 410, 50, 35);
+
+        jBn.setText("N");
+        jBn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBn);
+        jBn.setBounds(400, 360, 50, 35);
+
+        jLabel2.setText("Quantidade de erros:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(40, 30, 130, 14);
+
+        jLerro.setText("0");
+        getContentPane().add(jLerro);
+        jLerro.setBounds(180, 30, 20, 14);
+
+        jLabel1.setText("Dica :   Nome");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(40, 10, 90, 14);
+
+        jLboneco1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/boneco.JPG"))); // NOI18N
+        getContentPane().add(jLboneco1);
+        jLboneco1.setBounds(110, 130, 20, 80);
+
+        jLboneco2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/boneco.JPG"))); // NOI18N
+        getContentPane().add(jLboneco2);
+        jLboneco2.setBounds(150, 130, 20, 80);
+
+        jLboneco3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/boneco.JPG"))); // NOI18N
+        getContentPane().add(jLboneco3);
+        jLboneco3.setBounds(190, 130, 20, 80);
+
+        jLboneco4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/boneco.JPG"))); // NOI18N
+        getContentPane().add(jLboneco4);
+        jLboneco4.setBounds(220, 130, 20, 80);
+
+        jLboneco5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/boneco5.JPG"))); // NOI18N
+        getContentPane().add(jLboneco5);
+        jLboneco5.setBounds(270, 130, 20, 80);
+
+        jLboneco6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/boneco6.JPG"))); // NOI18N
+        getContentPane().add(jLboneco6);
+        jLboneco6.setBounds(260, 110, 34, 180);
+
+        jLmadeira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/madeira.JPG"))); // NOI18N
+        getContentPane().add(jLmadeira);
+        jLmadeira.setBounds(250, 200, 60, 20);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JogodaForca/fundo.JPG"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(40, 0, 410, 290);
+
+        pack();
+    }// </editor-fold>
+    public void bom(){
+        if(jLj.getText().equals("J") && jLu.getText().equals("U")
+                && jLr.getText().equals("R")&& jLe.getText().equals("E")
+                && jLm.getText().equals("M")&& jLa.getText().equals("A")){
+            JOptionPane.showMessageDialog(null, "Parabens!!! Você Venceu!");
+            int resp =JOptionPane.showConfirmDialog(this, "Deseja ir para próxima fase?",
+                "Comfirmação", JOptionPane.YES_NO_OPTION);
+     
+            if (resp==JOptionPane.YES_NO_OPTION){
+                fase2 f2 = new fase2();
+                f2.show();
+                setVisible(false);
+            }else{
+                Principal pr = new Principal();
+                pr.show();
+                setVisible(false);
+            }
+        }
+    }
+    
+
+    
+    
+    public void erro(){
+
+        if (jLerro.getText().equals("0")){
+            jLerro.setText("1");
+            jLboneco1.setVisible(false);
+            jLboneco2.setVisible(true);
+            jLboneco3.setVisible(false);
+            jLboneco4.setVisible(false);
+            jLboneco5.setVisible(false);
+            jLboneco6.setVisible(false);
+            jLmadeira.setVisible(true);
+        }
+        else if (jLerro.getText().equals("1")){
+            jLerro.setText("2");
+            jLboneco1.setVisible(false);
+            jLboneco2.setVisible(false);
+            jLboneco3.setVisible(true);
+            jLboneco4.setVisible(false);
+            jLboneco5.setVisible(false);
+            jLboneco6.setVisible(false);
+            jLmadeira.setVisible(true);
+        }
+        else if (jLerro.getText().equals("2")){
+            jLerro.setText("3");
+            jLboneco1.setVisible(false);
+            jLboneco2.setVisible(false);
+            jLboneco3.setVisible(false);
+            jLboneco4.setVisible(true);
+            jLboneco5.setVisible(false);
+            jLboneco6.setVisible(false);
+            jLmadeira.setVisible(true);
+        }
+        else if (jLerro.getText().equals("3")){
+            jLerro.setText("4");
+            jLboneco1.setVisible(false);
+            jLboneco2.setVisible(false);
+            jLboneco3.setVisible(false);
+            jLboneco4.setVisible(false);
+            jLboneco5.setVisible(true);
+            jLboneco6.setVisible(false);
+            jLmadeira.setVisible(true);
+        }
+        else if (jLerro.getText().equals("4")){
+            jLerro.setText("5");
+            jLboneco1.setVisible(false);
+            jLboneco2.setVisible(false);
+            jLboneco3.setVisible(false);
+            jLboneco4.setVisible(false);
+            jLboneco5.setVisible(false);
+            jLboneco6.setVisible(true);
+            jLmadeira.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Você é muito ruim!!!");
+            int resp =JOptionPane.showConfirmDialog(this, "Deseja continuar o jogo?",
+                "Comfirmação", JOptionPane.YES_NO_OPTION);
+       
+            if (resp==JOptionPane.YES_NO_OPTION){
+                fase1 f1 = new fase1();
+                f1.show();
+                setVisible(false);
+
+            }else{
+                Principal pr = new Principal();
+                pr.show();
+                setVisible(false);
+            }    
+        }
+    }
+    private void jBbActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLb.setText("B");
+        erro();
+    }                                   
+
+    private void jBaActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        jLa.setText("A");
+        bom();
+    }                                   
+
+    private void jBcActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLc.setText("C");
+        erro();
+    }                                   
+
+    private void jBdActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLd.setText("D");
+        erro();
+    }                                   
+
+    private void jBeActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        jLe.setText("E");
+        bom();
+    }                                   
+
+    private void jBfActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLf.setText("F");
+        erro();
+    }                                   
+
+    private void jBkActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLk.setText("K");
+        erro();
+    }                                   
+
+    private void jBlActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLl.setText("L");
+        erro();
+    }                                   
+
+    private void jBmActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        jLm.setText("M");
+        bom();
+    }                                   
+
+    private void jBjActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        jLj.setText("J");
+        bom();
+    }                                   
+
+    private void jBiActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLi.setText("I");
+        erro();
+    }                                   
+
+    private void jBhActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLh.setText("H");
+        erro();
+    }                                   
+
+    private void jBqActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLq.setText("Q");
+        erro();
+    }                                   
+
+    private void jBtActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLt.setText("T");
+        erro();
+    }                                   
+
+    private void jBoActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLo.setText("O");
+        erro();
+    }                                   
+
+    private void jBpActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLp.setText("P");
+        erro();
+    }                                   
+
+    private void jBsActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLs.setText("S");
+        erro();
+    }                                   
+
+    private void jBrActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        jLr.setText("R");
+        bom();
+    }                                   
+
+    private void jByActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLy.setText("Y");
+        erro();
+    }                                   
+
+    private void jBsairActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        Principal pr = new Principal();
+        pr.show();
+        setVisible(false);
+    }                                      
+
+    private void jBvActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLv.setText("V");
+        erro();
+    }                                   
+
+    private void jBxActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLx.setText("X");
+        erro();
+    }                                   
+
+    private void jBzActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLz.setText("Z");
+        erro();
+    }                                   
+
+    private void jBwActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLw.setText("W");
+        erro();
+    }                                   
+
+    private void jBgActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLg.setText("G");
+        erro();
+    }                                   
+
+    private void jBuActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        jLu.setText("U");
+        bom();
+    }                                   
+
+    private void jBnActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // jLn.setText("N");
+        erro();
+    }                                   
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(fase1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(fase1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(fase1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(fase1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new fase1().setVisible(true);
+            }
+        });
+    }
+    
+    // Variables declaration - do not modify
+    private javax.swing.JButton jBa;
+    private javax.swing.JButton jBb;
+    private javax.swing.JButton jBc;
+    private javax.swing.JButton jBd;
+    private javax.swing.JButton jBe;
+    private javax.swing.JButton jBf;
+    private javax.swing.JButton jBg;
+    private javax.swing.JButton jBh;
+    private javax.swing.JButton jBi;
+    private javax.swing.JButton jBj;
+    private javax.swing.JButton jBk;
+    private javax.swing.JButton jBl;
+    private javax.swing.JButton jBm;
+    private javax.swing.JButton jBn;
+    private javax.swing.JButton jBo;
+    private javax.swing.JButton jBp;
+    private javax.swing.JButton jBq;
+    private javax.swing.JButton jBr;
+    private javax.swing.JButton jBs;
+    private javax.swing.JButton jBsair;
+    private javax.swing.JButton jBt;
+    private javax.swing.JButton jBu;
+    private javax.swing.JButton jBv;
+    private javax.swing.JButton jBw;
+    private javax.swing.JButton jBx;
+    private javax.swing.JButton jBy;
+    private javax.swing.JButton jBz;
+    private javax.swing.JLabel jLa;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLboneco1;
+    private javax.swing.JLabel jLboneco2;
+    private javax.swing.JLabel jLboneco3;
+    private javax.swing.JLabel jLboneco4;
+    private javax.swing.JLabel jLboneco5;
+    private javax.swing.JLabel jLboneco6;
+    private javax.swing.JLabel jLe;
+    private javax.swing.JLabel jLerro;
+    private javax.swing.JLabel jLj;
+    private javax.swing.JLabel jLm;
+    private javax.swing.JLabel jLmadeira;
+    private javax.swing.JLabel jLr;
+    private javax.swing.JLabel jLu;
+    // End of variables declaration
+}

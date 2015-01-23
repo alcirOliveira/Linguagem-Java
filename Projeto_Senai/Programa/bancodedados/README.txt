@@ -1,0 +1,1 @@
+Script para criar tabela e código java para criação de conexão no banco de dado MySql.

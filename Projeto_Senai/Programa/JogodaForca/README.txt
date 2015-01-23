@@ -1,0 +1,1 @@
+Imagens e códigos utilizado para desenvolver um jogo da forca.
